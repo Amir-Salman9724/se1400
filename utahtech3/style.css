@@ -1,0 +1,129 @@
+/* Global Body Styles */
+body {
+    background-color: #FFFFFF;
+    color: #666666;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+/* Layout Wrapper */
+#wrapper {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Header Section */
+header {
+    background-color: #003058;
+    color: #FFFFFF;
+    font-family: Georgia, serif;
+}
+
+/* Descendant Selector for Header Text */
+header h1 {
+    line-height: 140%;
+    padding: 0.5rem;
+    margin: 0;
+}
+
+/* Navigation Menu */
+nav {
+    font-weight: bold;
+    background-color: #F3F3F3;
+    padding: 0.5rem;
+}
+
+/* Main Heading 2 */
+h2 {
+    color: #424242;
+    font-family: Georgia, serif;
+}
+
+/* Definition Terms */
+dt {
+    color: #003058;
+    font-weight: bold;
+}
+
+/* Utah Tech Class Selector */
+.ut {
+    color: #BA1C21;
+    font-weight: bold;
+}
+
+/* Footer Styling */
+footer {
+    font-size: 0.70rem;
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+}
+/* Body & Wrapper styling */
+body {
+    background-image: linear-gradient(to bottom, #eeeeee, #ffffff);
+    background-attachment: fixed;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#wrapper {
+    background-color: #ffffff;
+    min-width: 960px;
+    max-width: 2048px;
+    width: 80%;
+    margin: auto;
+    box-shadow: 0px 3px 3px rgba(66, 66, 66, 0.3);
+}
+
+/* Header & Logo */
+h1 {
+    background-image: url(utahtechlogo.svg);
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-size: contain;
+    padding: 20px 1em;
+    margin: 0;
+    color: #003058;
+}
+
+/* Navigation */
+nav {
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    background-color: #f8f8f8;
+}
+
+nav a {
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+    color: #003058;
+}
+
+nav a:hover {
+    color: #ba1c21; /* Subtle hover effect */
+}
+
+/* Hero Image Logic */
+#homehero, #studenthero, #facultyhero {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#homehero { background-image: url(homehero.jpg); }
+#studenthero { background-image: url(studenthero.jpg); }
+#facultyhero { background-image: url(facultyhero.jpg); }
+
+/* Main Content */
+main {
+    padding: 1rem 2rem;
+}
+
+footer {
+    padding: 1rem;
+    font-style: italic;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
