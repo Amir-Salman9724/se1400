@@ -4,7 +4,7 @@ body {
     background-attachment: fixed;
     color: #666666;
     font-family: Verdana, Arial, sans-serif;
-    margin: 0; /* Important: Removes the white gap at the very top */
+    margin: 0;
 }
 
 /* 2. Layout Wrapper */
@@ -19,7 +19,7 @@ body {
 
 /* 3. Header & Logo Placement */
 header {
-    background-color: #003058; /* Brooks Blue */
+    background-color: #003058;
 }
 
 h1 {
@@ -29,12 +29,11 @@ h1 {
     background-position: right center;
     background-repeat: no-repeat;
     background-origin: content-box;
-    background-size: contain; /* Ensures the SVG fits perfectly */
-    padding: 0 1em;
-    margin: 0; /* Removes the gap between header and nav */
-    height: 120px; /* Gives the logo enough vertical space */
-    display: flex;
-    align-items: center; /* Vertically centers the text "Utah Tech University" */
+    background-size: contain;
+    /* Task 5: Padding adjusted for better logo spacing */
+    padding: 10px 1em; 
+    margin: 0; 
+    line-height: 140%;
 }
 
 /* 4. Navigation Menu */
@@ -51,7 +50,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #ba1c21; /* Rock Red hover effect */
+    color: #ba1c21;
 }
 
 /* 5. Hero Image Logic (Task 5) */
@@ -70,7 +69,6 @@ nav a:hover {
 main {
     padding: 1rem 2rem;
     display: block;
-    overflow: auto; /* Clears floats for the student.jpg image */
 }
 
 h2 {
@@ -82,11 +80,9 @@ h3 {
     color: #003058;
 }
 
-/* Specific styling for your lists and spans */
 dt {
     color: #003058;
     font-weight: bold;
-    margin-top: 10px;
 }
 
 .ut {
@@ -96,10 +92,9 @@ dt {
 
 /* 7. Footer Styling */
 footer {
-    padding: 2rem 1rem;
+    padding: 1rem;
     font-size: 0.70rem;
     font-style: italic;
     text-align: center;
     border-top: 1px solid #ddd;
-    background-color: #ffffff;
 }
