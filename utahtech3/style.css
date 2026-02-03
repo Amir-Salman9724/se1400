@@ -1,71 +1,13 @@
-/* Global Body Styles */
-body {
-    background-color: #FFFFFF;
-    color: #666666;
-    font-family: Verdana, Arial, sans-serif;
-}
-
-/* Layout Wrapper */
-#wrapper {
-    width: 80%;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-/* Header Section */
-header {
-    background-color: #003058;
-    color: #FFFFFF;
-    font-family: Georgia, serif;
-}
-
-/* Descendant Selector for Header Text */
-header h1 {
-    line-height: 140%;
-    padding: 0.5rem;
-    margin: 0;
-}
-
-/* Navigation Menu */
-nav {
-    font-weight: bold;
-    background-color: #F3F3F3;
-    padding: 0.5rem;
-}
-
-/* Main Heading 2 */
-h2 {
-    color: #424242;
-    font-family: Georgia, serif;
-}
-
-/* Definition Terms */
-dt {
-    color: #003058;
-    font-weight: bold;
-}
-
-/* Utah Tech Class Selector */
-.ut {
-    color: #BA1C21;
-    font-weight: bold;
-}
-
-/* Footer Styling */
-footer {
-    font-size: 0.70rem;
-    font-style: italic;
-    text-align: center;
-    padding: 1rem;
-}
-/* Body & Wrapper styling */
+ /* 1. Global Body Styles */
 body {
     background-image: linear-gradient(to bottom, #eeeeee, #ffffff);
     background-attachment: fixed;
+    color: #666666;
+    font-family: Verdana, Arial, sans-serif;
     margin: 0;
-    font-family: Arial, sans-serif;
 }
 
+/* 2. Layout Wrapper */
 #wrapper {
     background-color: #ffffff;
     min-width: 960px;
@@ -75,36 +17,42 @@ body {
     box-shadow: 0px 3px 3px rgba(66, 66, 66, 0.3);
 }
 
-/* Header & Logo */
+/* 3. Header & Logo Placement */
+header {
+    background-color: #003058; /* Keeps that nice dark blue */
+}
+
 h1 {
+    color: #FFFFFF;
+    font-family: Georgia, serif;
     background-image: url(utahtechlogo.svg);
     background-position: right center;
     background-repeat: no-repeat;
     background-origin: content-box;
     background-size: contain;
     padding: 20px 1em;
-    margin: 0;
-    color: #003058;
+    margin: 0; /* Closes the gap with nav */
+    line-height: 140%;
 }
 
-/* Navigation */
+/* 4. Navigation Menu */
 nav {
     padding: 0.5rem 0.5rem 0.5rem 2rem;
-    background-color: #f8f8f8;
+    background-color: #F3F3F3;
+    font-weight: bold;
 }
 
 nav a {
     text-decoration: none;
     margin-right: 15px;
-    font-weight: bold;
     color: #003058;
 }
 
 nav a:hover {
-    color: #ba1c21; /* Subtle hover effect */
+    color: #ba1c21; /* Red hover effect */
 }
 
-/* Hero Image Logic */
+/* 5. Hero Image Logic (Task 5) */
 #homehero, #studenthero, #facultyhero {
     height: 300px;
     background-size: cover;
@@ -116,13 +64,32 @@ nav a:hover {
 #studenthero { background-image: url(studenthero.jpg); }
 #facultyhero { background-image: url(facultyhero.jpg); }
 
-/* Main Content */
+/* 6. Main Content Area */
 main {
     padding: 1rem 2rem;
+    display: block;
 }
 
+h2 {
+    color: #424242;
+    font-family: Georgia, serif;
+}
+
+/* Specific styling for your lists and spans */
+dt {
+    color: #003058;
+    font-weight: bold;
+}
+
+.ut {
+    color: #BA1C21;
+    font-weight: bold;
+}
+
+/* 7. Footer Styling */
 footer {
     padding: 1rem;
+    font-size: 0.70rem;
     font-style: italic;
     text-align: center;
     border-top: 1px solid #ddd;
