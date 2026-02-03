@@ -1,4 +1,4 @@
-/* 1. Global Body Styles */
+/* 1. Global Styles & Background Gradient (Task 5.1) */
 body {
     background-image: linear-gradient(to bottom, #eeeeee, #ffffff);
     background-attachment: fixed;
@@ -7,7 +7,7 @@ body {
     margin: 0;
 }
 
-/* 2. Layout Wrapper */
+/* 2. Wrapper Box-Shadow & Widths (Task 5.2) */
 #wrapper {
     background-color: #ffffff;
     min-width: 960px;
@@ -17,7 +17,7 @@ body {
     box-shadow: 0px 3px 3px rgba(66, 66, 66, 0.3);
 }
 
-/* 3. Header & Logo Placement */
+/* 3. Header & Logo (Task 5.3) */
 header {
     background-color: #003058;
 }
@@ -29,14 +29,12 @@ h1 {
     background-position: right center;
     background-repeat: no-repeat;
     background-origin: content-box;
-    background-size: contain;
-    /* Task 5: Padding adjusted for better logo spacing */
-    padding: 10px 1em; 
-    margin: 0; 
-    line-height: 140%;
+    padding-left: 1em;
+    margin-bottom: 0; /* Removes gap between header and nav */
+    line-height: 200%;
 }
 
-/* 4. Navigation Menu */
+/* 4. Navigation Padding & Style (Task 5.4 & 5.11) */
 nav {
     padding: 0.5rem 0.5rem 0.5rem 2rem;
     background-color: #F3F3F3;
@@ -44,45 +42,25 @@ nav {
 }
 
 nav a {
-    text-decoration: none;
-    margin-right: 15px;
+    text-decoration: none; /* Task 5.11 */
     color: #003058;
 }
 
-nav a:hover {
-    color: #ba1c21;
-}
-
-/* 5. Hero Image Logic (Task 5) */
-#homehero, #studenthero, #facultyhero {
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#homehero { background-image: url(homehero.jpg); }
-#studenthero { background-image: url(studenthero.jpg); }
-#facultyhero { background-image: url(facultyhero.jpg); }
-
-/* 6. Main Content Area */
-main {
-    padding: 1rem 2rem;
-    display: block;
-}
-
+/* 5. Content Headings (Task 5.6) */
 h2 {
     color: #424242;
     font-family: Georgia, serif;
 }
 
 h3 {
-    color: #003058;
+    color: #003058; /* Task 5.6 */
+    font-family: Georgia, serif;
 }
 
-dt {
-    color: #003058;
-    font-weight: bold;
+/* 6. Main Content Padding (Task 5.7) */
+main {
+    padding: 0 2rem;
+    display: block;
 }
 
 .ut {
@@ -90,11 +68,23 @@ dt {
     font-weight: bold;
 }
 
-/* 7. Footer Styling */
+/* 7. Hero Image Configurations (Tasks 5.8, 5.9, 5.10) */
+#homehero, #studenthero, #facultyhero {
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#homehero { background-image: url(homehero.jpg); }
+#studenthero { background-image: url(studenthero.jpg); }
+#facultyhero { background-image: url(facultyhero.jpg); }
+
+/* 8. Footer Styling (Task 5.5) */
 footer {
-    padding: 1rem;
     font-size: 0.70rem;
     font-style: italic;
     text-align: center;
+    padding: 1rem; /* Task 5.5 */
     border-top: 1px solid #ddd;
 }
