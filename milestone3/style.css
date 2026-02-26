@@ -1,0 +1,84 @@
+/* Basic reset to clean up the page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1e1e1e; /* Dark background to see the boxes better */
+    font-family: sans-serif;
+}
+
+/* --- THE GRID CONTAINER --- */
+.grid-container {
+    display: grid;
+    /* REQUIRED LINE FROM CANVAS RUBRIC */
+    grid-template-columns: minmax(0px, 1fr) repeat(6, minmax(0, 175px)) minmax(0px, 1fr);
+    gap: 20px;
+    padding: 40px 0;
+}
+
+/* --- THE GRID CHILDREN (General Styling) --- */
+.grid-item {
+    /* Semi-transparent color as requested in Task 3 */
+    background-color: rgba(255, 255, 255, 0.3);
+    
+    /* Extra styling just to make it look nice */
+    border: 2px solid white;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* --- POSITIONING EACH BOX --- */
+
+/* 1. Header spans across the middle 6 columns */
+.header-box {
+    grid-column: 2 / 8;
+    height: 80px; /* Temporary height */
+}
+
+/* 2. About Me Title on the left side */
+.about-title {
+    grid-column: 2 / 5;
+    height: 60px;
+}
+
+/* 3. Paragraph text on the left side, under the title */
+.about-text {
+    grid-column: 2 / 5;
+    height: 250px;
+}
+
+/* 4. Picture on the right side, tall enough to span next to the title and text */
+.about-image {
+    grid-column: 5 / 8;
+    grid-row: 2 / 4; /* Spans down two rows */
+    height: 330px; 
+}
+
+/* 5. Socials Title spans across the middle */
+.socials-title {
+    grid-column: 2 / 8;
+    height: 60px;
+}
+
+/* 6, 7, 8. Icons perfectly centered below the socials title */
+.icon-1 {
+    grid-column: 4 / 5;
+    height: 100px;
+}
+
+.icon-2 {
+    grid-column: 5 / 6;
+    height: 100px;
+}
+
+.icon-3 {
+    grid-column: 6 / 7;
+    height: 100px;
+}
