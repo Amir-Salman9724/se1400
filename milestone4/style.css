@@ -14,7 +14,7 @@ body {
 /* --- THE GRID CONTAINER --- */
 .grid-container {
     display: grid;
-    /* REQUIRED LINE FROM CANVAS RUBRIC */
+    
     grid-template-columns: minmax(0px, 1fr) repeat(6, minmax(0, 175px)) minmax(0px, 1fr);
     column-gap: 20px;
     row-gap: 0; 
@@ -152,7 +152,7 @@ body {
 .social-icon {
     width: 120px;  /* Exact width for all icons */
     height: 120px; /* Exact height for all icons */
-    object-fit: contain; /* Prevents stretching, scales image to fit inside the 120x120 box */
+    object-fit: contain; 
     transition: transform 0.2s ease;
 }
 
