@@ -6,27 +6,28 @@
 }
 
 body {
-    background-color: #ffffff; 
-    font-family: "Times New Roman", Times, serif; 
+    background-color: #ffffff;
+    font-family: "Times New Roman", Times, serif;
     color: #000000;
 }
 
-/* --- THE GRID CONTAINER (Desktop Default) --- */
+/* --- THE GRID CONTAINER --- */
 .grid-container {
     display: grid;
-    /* 8 columns total: 1fr on sides, 6 middle columns of 175px */
     grid-template-columns: minmax(0px, 1fr) repeat(6, minmax(0, 175px)) minmax(0px, 1fr);
     column-gap: 20px;
-    row-gap: 0; 
+    row-gap: 0;
 }
 
-/* FULL WIDTH BLUE BACKGROUND */
+/* --- FULL WIDTH BLUE BACKGROUND --- */
 .blue-bg {
-    grid-column: 1 / -1; 
-    grid-row: 2 / 4; 
-    background-color: #0066FF; 
-    z-index: -1; 
+    grid-column: 1 / -1;
+    grid-row: 2 / 4;
+    background-color: #0066FF;
+    z-index: -1;
 }
+
+/* --- POSITIONING AND INTERNAL FLEXBOX --- */
 
 /* 1. Header */
 .header-box {
@@ -54,7 +55,7 @@ body {
 
 .nav-row {
     display: flex;
-    gap: 80px; 
+    gap: 80px;
 }
 
 .nav-row a {
@@ -75,7 +76,10 @@ body {
     padding-bottom: 20px;
 }
 
-.about-title h2 { font-size: 3.5rem; font-weight: normal; }
+.about-title h2 {
+    font-size: 3.5rem;
+    font-weight: normal;
+}
 
 /* 3. Paragraph text */
 .about-text {
@@ -84,10 +88,10 @@ body {
     display: flex;
     align-items: flex-start;
     color: white;
-    padding: 0 20px 60px 20px; 
+    padding: 0 20px 60px 20px;
     font-size: 1.15rem;
     line-height: 1.6;
-    text-align: center; 
+    text-align: center;
 }
 
 /* 4. Profile Picture */
@@ -102,7 +106,7 @@ body {
 
 .profile-img {
     width: 100%;
-    max-width: 250px; 
+    max-width: 250px;
     height: auto;
 }
 
@@ -117,64 +121,96 @@ body {
     padding-bottom: 20px;
 }
 
-.socials-title h2 { font-size: 3.5rem; font-weight: normal; }
-
-/* Social Icons Layout */
-.social-gallery {
-    grid-column: 2 / 8;
-    grid-row: 5 / 6;
-    display: flex;
-    justify-content: space-around;
-    padding-bottom: 80px;
-    flex-wrap: wrap;
-    gap: 20px;
+.socials-title h2 {
+    font-size: 3.5rem;
+    font-weight: normal;
 }
 
+/* 6, 7, 8. Social Icons */
+.icon-1 { grid-column: 3 / 4; grid-row: 5 / 6; }
+.icon-2 { grid-column: 4 / 6; grid-row: 5 / 6; }
+.icon-3 { grid-column: 6 / 7; grid-row: 5 / 6; }
+
+.icon-1, .icon-2, .icon-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 80px;
+}
+
+/* FORCED UNIFORM SIZING FOR ALL ICONS */
 .social-icon {
     width: 120px;
     height: 120px;
-    object-fit: contain; 
+    object-fit: contain;
     transition: transform 0.2s ease;
 }
 
-.social-icon:hover { transform: scale(1.05); }
+.social-icon:hover {
+    transform: scale(1.05);
+}
 
-/* --- MEDIA QUERIES --- */
+/* ======================================================== */
+/* MILESTONE 5: MEDIA QUERIES FOR MOBILE IMPLEMENTATION     */
+/* ======================================================== */
 
-/* Requirement: Breakpoint 1 - Less than 992px */
-@media screen and (max-width: 991px) {
+/* Breakpoint 1: Viewports less than 992px */
+@media (max-width: 991px) {
     .grid-container {
-        /* Center column set to 768px wide */
-        grid-template-columns: 1fr 768px 1fr;
-    }
-
-    .header-box, .about-title, .about-text, .about-image, .socials-title, .social-gallery {
-        grid-column: 2 / 3; /* Move everything to the 768px center column */
-    }
-
-    .about-text, .about-image {
-        grid-row: auto; /* Allow natural flow */
+        /* Restrict the 6 center columns to total 768px (6 * 128px = 768px) */
+        grid-template-columns: minmax(0px, 1fr) repeat(6, 128px) minmax(0px, 1fr);
+        column-gap: 10px;
     }
 }
 
-/* Requirement: Breakpoint 2 - 768px and below */
-@media screen and (max-width: 768px) {
+/* Breakpoint 2: Viewports at 768px and below */
+@media (max-width: 768px) {
     .grid-container {
-        /* Center column set to 100% wide, outer columns disabled (0px) */
-        grid-template-columns: 0px 100% 0px;
+        /* Center column 100% wide, disable left/right columns */
+        grid-template-columns: 100%;
         column-gap: 0;
+        padding: 0 15px; /* Added padding to prevent text from touching screen edges */
     }
 
-    /* Stack elements vertically for mobile */
-    .about-text, .about-image {
-        padding: 20px;
-    }
-    
-    .nav-row {
-        gap: 20px; /* Reduce gap for smaller screens */
+    /* Adjust items to span the new single column */
+    .header-box,
+    .about-title,
+    .socials-title,
+    .blue-bg {
+        grid-column: 1 / -1;
     }
 
-    .header-box h1, .about-title h2, .socials-title h2 {
-        font-size: 2.5rem; /* Scale down text for mobile */
+    /* Stack text and image on mobile */
+    .about-text {
+        grid-column: 1 / -1;
+        grid-row: 3 / 4;
+        padding: 0 10px 20px 10px;
+    }
+
+    .about-image {
+        grid-column: 1 / -1;
+        grid-row: 4 / 5; /* Move image to the row under the text */
+        padding-bottom: 30px;
+    }
+
+    /* Extend blue background down behind the newly stacked image */
+    .blue-bg {
+        grid-row: 2 / 5;
+    }
+
+    /* Adjust socials title row */
+    .socials-title {
+        grid-row: 5 / 6;
+    }
+
+    /* Stack social icons vertically */
+    .icon-1 { grid-column: 1 / -1; grid-row: 6 / 7; padding-bottom: 15px; }
+    .icon-2 { grid-column: 1 / -1; grid-row: 7 / 8; padding-bottom: 15px; }
+    .icon-3 { grid-column: 1 / -1; grid-row: 8 / 9; padding-bottom: 50px; }
+
+    /* Flexbox attributes changed to fit smaller screen size menu */
+    .nav-links, .nav-row {
+        flex-direction: column;
+        gap: 15px;
     }
 }
