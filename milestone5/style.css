@@ -157,46 +157,60 @@ body {
 /* Breakpoint 1: Viewports less than 992px */
 @media (max-width: 991px) {
     .grid-container {
-        /* Restrict the 6 center columns to total 768px */
+        /* Restrict the 6 center columns to total 768px (6 * 128px = 768px) */
         grid-template-columns: minmax(0px, 1fr) repeat(6, 128px) minmax(0px, 1fr);
         column-gap: 10px;
     }
 }
 
-/* Breakpoint 2: Viewports at 768px and below (Mobile) */
+/* Breakpoint 2: Viewports at 768px and below */
 @media (max-width: 768px) {
     .grid-container {
         /* Center column 100% wide, disable left/right columns */
         grid-template-columns: 100%;
         column-gap: 0;
-        padding: 0 20px;
-        overflow-x: hidden; /* Prevents side-scrolling */
+        padding: 0 15px; /* Added padding to prevent text from touching screen edges */
     }
 
-    /* Force every single item to sit inside the new single column, and manually set their row order */
-    .header-box { grid-column: 1 / 2; grid-row: 1; padding: 30px 0; }
-    .about-title { grid-column: 1 / 2; grid-row: 2; }
-    .about-text { grid-column: 1 / 2; grid-row: 3; padding: 0 10px 20px 10px; }
-    .about-image { grid-column: 1 / 2; grid-row: 4; padding-bottom: 30px; }
-    
-    /* Extend blue background behind the stacked title, text, and image */
-    .blue-bg { grid-column: 1 / 2; grid-row: 2 / 5; }
-
-    .socials-title { grid-column: 1 / 2; grid-row: 5; }
-    .icon-1 { grid-column: 1 / 2; grid-row: 6; padding-bottom: 20px; }
-    .icon-2 { grid-column: 1 / 2; grid-row: 7; padding-bottom: 20px; }
-    .icon-3 { grid-column: 1 / 2; grid-row: 8; padding-bottom: 60px; }
-
-    /* Shrink the font sizes slightly for mobile screens */
-    .header-box h1, .about-title h2, .socials-title h2 {
-        font-size: 2.5rem;
+    /* Adjust items to span the new single column */
+    .header-box,
+    .about-title,
+    .socials-title,
+    .blue-bg {
+        grid-column: 1 / -1;
     }
 
-    /* Stack navigation links vertically and remove the massive 80px horizontal gap */
+    /* Stack text and image on mobile */
+    .about-text {
+        grid-column: 1 / -1;
+        grid-row: 3 / 4;
+        padding: 0 10px 20px 10px;
+    }
+
+    .about-image {
+        grid-column: 1 / -1;
+        grid-row: 4 / 5; /* Move image to the row under the text */
+        padding-bottom: 30px;
+    }
+
+    /* Extend blue background down behind the newly stacked image */
+    .blue-bg {
+        grid-row: 2 / 5;
+    }
+
+    /* Adjust socials title row */
+    .socials-title {
+        grid-row: 5 / 6;
+    }
+
+    /* Stack social icons vertically */
+    .icon-1 { grid-column: 1 / -1; grid-row: 6 / 7; padding-bottom: 15px; }
+    .icon-2 { grid-column: 1 / -1; grid-row: 7 / 8; padding-bottom: 15px; }
+    .icon-3 { grid-column: 1 / -1; grid-row: 8 / 9; padding-bottom: 50px; }
+
+    /* Flexbox attributes changed to fit smaller screen size menu */
     .nav-links, .nav-row {
         flex-direction: column;
-        gap: 15px; 
-        align-items: center;
-        width: 100%;
+        gap: 15px;
     }
 }
