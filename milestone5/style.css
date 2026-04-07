@@ -1,0 +1,180 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff; 
+    font-family: "Times New Roman", Times, serif; 
+    color: #000000;
+}
+
+/* --- THE GRID CONTAINER (Desktop Default) --- */
+.grid-container {
+    display: grid;
+    /* 8 columns total: 1fr on sides, 6 middle columns of 175px */
+    grid-template-columns: minmax(0px, 1fr) repeat(6, minmax(0, 175px)) minmax(0px, 1fr);
+    column-gap: 20px;
+    row-gap: 0; 
+}
+
+/* FULL WIDTH BLUE BACKGROUND */
+.blue-bg {
+    grid-column: 1 / -1; 
+    grid-row: 2 / 4; 
+    background-color: #0066FF; 
+    z-index: -1; 
+}
+
+/* 1. Header */
+.header-box {
+    grid-column: 2 / 8;
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0 60px 0;
+}
+
+.header-box h1 {
+    font-size: 3.5rem;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-row {
+    display: flex;
+    gap: 80px; 
+}
+
+.nav-row a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* 2. About Me Title */
+.about-title {
+    grid-column: 2 / 8;
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.about-title h2 { font-size: 3.5rem; font-weight: normal; }
+
+/* 3. Paragraph text */
+.about-text {
+    grid-column: 2 / 5;
+    grid-row: 3 / 4;
+    display: flex;
+    align-items: flex-start;
+    color: white;
+    padding: 0 20px 60px 20px; 
+    font-size: 1.15rem;
+    line-height: 1.6;
+    text-align: center; 
+}
+
+/* 4. Profile Picture */
+.about-image {
+    grid-column: 5 / 8;
+    grid-row: 3 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 60px;
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 250px; 
+    height: auto;
+}
+
+/* 5. Socials Title */
+.socials-title {
+    grid-column: 2 / 8;
+    grid-row: 4 / 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.socials-title h2 { font-size: 3.5rem; font-weight: normal; }
+
+/* Social Icons Layout */
+.social-gallery {
+    grid-column: 2 / 8;
+    grid-row: 5 / 6;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 80px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 120px;
+    height: 120px;
+    object-fit: contain; 
+    transition: transform 0.2s ease;
+}
+
+.social-icon:hover { transform: scale(1.05); }
+
+/* --- MEDIA QUERIES --- */
+
+/* Requirement: Breakpoint 1 - Less than 992px */
+@media screen and (max-width: 991px) {
+    .grid-container {
+        /* Center column set to 768px wide */
+        grid-template-columns: 1fr 768px 1fr;
+    }
+
+    .header-box, .about-title, .about-text, .about-image, .socials-title, .social-gallery {
+        grid-column: 2 / 3; /* Move everything to the 768px center column */
+    }
+
+    .about-text, .about-image {
+        grid-row: auto; /* Allow natural flow */
+    }
+}
+
+/* Requirement: Breakpoint 2 - 768px and below */
+@media screen and (max-width: 768px) {
+    .grid-container {
+        /* Center column set to 100% wide, outer columns disabled (0px) */
+        grid-template-columns: 0px 100% 0px;
+        column-gap: 0;
+    }
+
+    /* Stack elements vertically for mobile */
+    .about-text, .about-image {
+        padding: 20px;
+    }
+    
+    .nav-row {
+        gap: 20px; /* Reduce gap for smaller screens */
+    }
+
+    .header-box h1, .about-title h2, .socials-title h2 {
+        font-size: 2.5rem; /* Scale down text for mobile */
+    }
+}
