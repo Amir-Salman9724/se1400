@@ -75,8 +75,20 @@ p {
     float: right;
     margin-left: 20px;
     margin-bottom: 15px;
-    border: 1px solid #ddd;
-    padding: 5px;
+    /* Border and padding removed to fix the black rectangle issue */
+}
+
+.side-image img {
+    width: 100%;
+    display: block;
+}
+
+.caption {
+    font-size: 0.75rem;
+    font-style: italic;
+    text-align: center;
+    margin-top: 5px;
+    color: #777;
 }
 
 #hero img {
