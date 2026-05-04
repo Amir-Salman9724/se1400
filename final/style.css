@@ -8,7 +8,7 @@ body {
 
 #wrapper {
     display: grid;
-    /* 8-column setup: 1fr on ends, 175px gutters, 4fr middle */
+    
     grid-template-columns: 1fr 175px 1fr 1fr 1fr 1fr 175px 1fr;
 }
 
@@ -44,9 +44,9 @@ nav ul {
 nav a {
     display: block;
     text-decoration: none;
-    color: #555;
+    color: #2d0000;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    
 }
 
 nav a:hover {
@@ -75,7 +75,7 @@ p {
     float: right;
     margin-left: 20px;
     margin-bottom: 15px;
-    /* Border and padding removed to fix the black rectangle issue */
+    
 }
 
 .side-image img {
