@@ -9,7 +9,7 @@ body {
 #wrapper {
     display: grid;
     
-    grid-template-columns: 1fr 175px fr 1fr 1fr 1fr 175px 1fr;
+    grid-template-columns: 1fr 175px 1fr 1fr 1fr 1fr 175px 1fr;
 }
 
 nav {
@@ -44,9 +44,9 @@ nav ul {
 nav a {
     display: block;
     text-decoration: none;
+    
     color: #2d0000;
     padding: 10px;
-    
 }
 
 nav a:hover {
@@ -70,12 +70,21 @@ p {
     margin-bottom: 15px;
 }
 
+
+main a {
+    color: #d53631; 
+    text-decoration: underline;
+}
+
+main a:hover {
+    color: #2d5ba6; 
+}
+
 .side-image {
     width: 300px;
     float: right;
     margin-left: 20px;
     margin-bottom: 15px;
-    
 }
 
 .side-image img {
